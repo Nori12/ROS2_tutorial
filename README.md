@@ -7,9 +7,9 @@ Version: Kilted Kaiju
 
 Before working on a ROS2 workspace, it is important to run:
 ```bash
-cd ~/ros2_workspace
 source install/setup.bash
 ```
+
 With this command, it:
 - enables autocompletion.
 - adds your workspace's bin folder to the system's PATH.
@@ -26,4 +26,22 @@ colcon build
 Compile specific packages:
 ```bash
 colcon build --packages-select MY_PACKAGE
+```
+
+### Topics - General commands
+
+To list all current topics:
+```bash
+ros2 topic list
+```
+
+To print the data going through a Topic:
+```bash
+ros2 topic echo /topic_name
+```
+
+Get more details about a Topic
+```bash
+ros2 topic info /topic_name
+ros2 topic type /topic_name
 ```
