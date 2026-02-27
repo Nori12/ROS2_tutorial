@@ -50,12 +50,12 @@ ros2 topic type /topic_name
 
 (At a rate of 10Hz)
 ```bash
-ros2 topic pub -r 10 /example_topic example_interfaces/msg/String "{data: 'Hello from terminal'}"
+ros2 topic pub -r 10 /topic_name example_interfaces/msg/String "{data: 'Hello from terminal'}"
 ```
 
 (Only once)
 ```bash
-ros2 topic pub -1 /example_topic example_interfaces/msg/String "{data: 'Hello from terminal'}"
+ros2 topic pub -1 /topic_name example_interfaces/msg/String "{data: 'Hello from terminal'}"
 ```
 
 ### Check if your publishers/subscribers manage to follow the rhythm
