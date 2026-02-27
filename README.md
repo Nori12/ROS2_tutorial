@@ -30,18 +30,34 @@ colcon build --packages-select MY_PACKAGE
 
 ### Topics - General commands
 
-To list all current topics:
+List all current topics:
 ```bash
 ros2 topic list
 ```
 
-To print the data going through a Topic:
+Print the data going through a Topic:
 ```bash
 ros2 topic echo /topic_name
 ```
 
-Get more details about a Topic
+Get more details about a Topic:
 ```bash
 ros2 topic info /topic_name
 ros2 topic type /topic_name
 ```
+
+Publish to a topic from the terminal:
+
+(At a rate of 10Hz)
+```bash
+ros2 topic pub -r 10 /example_topic example_interfaces/msg/String "{data: 'Hello from terminal'}"
+```
+
+(Only once)
+```bash
+ros2 topic pub -1 /example_topic example_interfaces/msg/String "{data: 'Hello from terminal'}"
+```
+
+
+
+
