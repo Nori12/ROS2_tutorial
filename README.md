@@ -23,7 +23,7 @@ With this command, it:
 colcon build
 ```
 
-### Compile specific packages:
+### Compile a specific package:
 ```bash
 colcon build --packages-select MY_PACKAGE
 ```
@@ -35,12 +35,12 @@ colcon build --packages-select MY_PACKAGE
 ros2 topic list
 ```
 
-### Print the data going through a Topic:
+### Print the data going through a topic:
 ```bash
 ros2 topic echo /topic_name
 ```
 
-### Get more details about a Topic:
+### Get more details about a topic:
 ```bash
 ros2 topic info /topic_name
 ros2 topic type /topic_name
