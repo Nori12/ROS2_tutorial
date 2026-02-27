@@ -3,7 +3,7 @@ My owm tutorial to guide me through ROS2.
 
 Version: Kilted Kaiju
 
-### Essential : run setup.bash
+## Essential : run setup.bash
 
 Before working on a ROS2 workspace, it is important to run:
 ```bash
@@ -16,37 +16,37 @@ With this command, it:
 - tells ROS 2 where to find the package.xml and metadata for your custom nodes.
 - updates PYTHONPATH and LD_LIBRARY_PATH, since ROS 2 relies heavily on Python for launch files and specific node implementations.
 
-### Compiling
+## Compiling
 
-Compile all packages:
+### Compile all packages:
 ```bash
 colcon build
 ```
 
-Compile specific packages:
+### Compile specific packages:
 ```bash
 colcon build --packages-select MY_PACKAGE
 ```
 
-### Topics - General commands
+## Topics - General commands
 
-List all current topics:
+### List all current topics:
 ```bash
 ros2 topic list
 ```
 
-Print the data going through a Topic:
+### Print the data going through a Topic:
 ```bash
 ros2 topic echo /topic_name
 ```
 
-Get more details about a Topic:
+### Get more details about a Topic:
 ```bash
 ros2 topic info /topic_name
 ros2 topic type /topic_name
 ```
 
-Publish to a topic from the terminal:
+### Publish to a topic from the terminal:
 
 (At a rate of 10Hz)
 ```bash
