@@ -9,3 +9,16 @@ mkdir -p ~/MYPROJECT_ws/src
 cd ~/MYPROJECT_ws
 ```
 
+## Build the Workspace
+
+The simple way:
+```bash
+colcon build
+```
+
+Other possibility:
+```bash
+colcon build --symlink-install
+```
+
+`--symlink-install` allows the installed files to be changed by changing the files in the source space (e.g. Python files or other non-compiled resources) for faster iteration.
