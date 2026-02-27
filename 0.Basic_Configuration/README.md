@@ -1,6 +1,5 @@
 # Basic Configuration
 
-
 ## Source the main ROS2 installation on bashrc
 
 To avoid sourcing the ROS2 installation files every time you launch a new terminal, add it permanently by modifying the `bashrc` file:
