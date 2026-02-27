@@ -13,6 +13,7 @@ Go to the end and add:
 ```bash
 source /opt/ros/kilted/setup.bash
 ```
+It is necessary to restart the open terminals to validate the modification.
 
 ## Avoid seeing external topics/nodes on the same network
 

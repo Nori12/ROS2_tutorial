@@ -9,8 +9,6 @@ mkdir -p ~/MYPROJECT_ws/src
 cd ~/MYPROJECT_ws
 ```
 
-It is necessary to restart the open terminals to validate the modification.
-
 <!-- ## Source the main ROS2 installation
 
 For Kilted Kaiju:
