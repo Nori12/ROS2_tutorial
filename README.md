@@ -58,6 +58,16 @@ ros2 topic pub -r 10 /example_topic example_interfaces/msg/String "{data: 'Hello
 ros2 topic pub -1 /example_topic example_interfaces/msg/String "{data: 'Hello from terminal'}"
 ```
 
+### Check if your publishers/subscribers manage to follow the rhythm
+
+```bash
+ros2 topic hz /topic_name
+```
 
 
+### Check how much data is going through a topic
+
+```bash
+ros2 topic bw /topic_name
+```
 
