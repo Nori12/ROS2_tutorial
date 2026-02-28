@@ -1,6 +1,6 @@
 # Creating a Node
 
-## Creating a simple node
+## Create a simple node
 
 Go to the the source folder of the target package:
 
@@ -72,7 +72,7 @@ ros2 run my_package my_node
 OBS: note that `my_node` is the executable name you defined in the `add_executable` part of the `CMakeLists.txt`.
 
 
-## Add a publisher to a topic
+## Add a publisher
 
 Replace the previous code in `simple_node.cpp` in the path `~/ros2_ws/src/my_package/src/` by the code below.
 
@@ -143,5 +143,5 @@ ros2 run my_package my_node
 Verify the creation of the topic by opening another terminal and running:
 
 ```bash
-
+ros2 topic echo /robot_position
 ```
