@@ -70,3 +70,13 @@ ros2 topic hz /topic_name
 ros2 topic bw /topic_name
 ```
 
+
+## Nodes - General commands
+
+### Run a node
+
+```bash
+ros2 run my_package my_node
+```
+
+OBS: note that `my_node` is the executable name you defined in the `add_executable` part of the `CMakeLists.txt`.
