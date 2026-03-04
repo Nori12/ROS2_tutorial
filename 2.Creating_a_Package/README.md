@@ -5,6 +5,9 @@
 For the dependencies `rclcpp` and `tf2_geometry_msgs`, run:
 ```bash
 cd ~/ros2_ws/src
+```
+
+```bash
 ros2 pkg create --build-type ament_cmake my_package --dependencies rclcpp tf2_geometry_msgs
 ```
 

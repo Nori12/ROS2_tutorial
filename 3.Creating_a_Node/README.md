@@ -18,7 +18,7 @@ And use the template code below to create the `simple_node.cpp` file.
 class MySimpleNode : public rclcpp::Node
 {
 public:
-  MySimpleNode() : Node("simple_node")
+  MySimpleNode() : Node("node_name")
   {
     RCLCPP_INFO(this->get_logger(), "Starting the Simple Node with TF2 support!");
 
@@ -43,18 +43,21 @@ int main(int argc, char ** argv)
 In the `CMakeLists.txt` file, add the following lines:
 
 ```python
-# 1. Create the executable
-add_executable(my_node src/simple_node.cpp)
+# After the last find_dependencies(...):
+add_executable(my_node_exe src/simple_node.cpp)
+ament_target_dependencies(my_node_exe rclcpp tf2_geometry_msgs)
 
-# 2. Link the dependencies (libraries)
-ament_target_dependencies(my_node rclcpp tf2_geometry_msgs)
-
-# 3. Install the executable so "ros2 run" can find it
+# Before ament_package(...):
 install(TARGETS
-  my_node
+  my_node_exe
   DESTINATION lib/${PROJECT_NAME}
 )
 ```
+
+Note that:
+* `add_executable` creates the executable.
+* `ament_target_dependencies` link.
+* `install` Install the executable so "ros2 run" can find it.
 
 Back to the root folder of the workspace, build the package:
 
@@ -66,10 +69,10 @@ colcon build --packages-select my_package
 Run the node:
 
 ```bash
-ros2 run my_package my_node
+ros2 run my_package my_node_exe
 ```
 
-OBS: note that `my_node` is the executable name you defined in the `add_executable` part of the `CMakeLists.txt`.
+OBS: note that `my_node_exe` is the executable name you defined in the `add_executable` part of the `CMakeLists.txt`.
 
 
 ## Add a publisher
@@ -88,7 +91,7 @@ using namespace std::chrono_literals;
 class MySimpleNode : public rclcpp::Node
 {
 public:
-  MySimpleNode() : Node("simple_node"), count_(0)
+  MySimpleNode() : Node("node_name"), count_(0)
   {
     // 1. Initialize the Publisher
     // Topic name: "robot_position", Queue size: 10
@@ -137,7 +140,7 @@ Build and execute the package:
 ```bash
 cd ~/ros2_ws/
 colcon build --packages-select my_package
-ros2 run my_package my_node
+ros2 run my_package my_node_exe
 ```
 
 Verify the creation of the topic by opening another terminal and running:
