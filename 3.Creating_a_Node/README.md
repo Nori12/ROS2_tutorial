@@ -152,7 +152,7 @@ ros2 topic echo /robot_position
 
 ## Add a subscriber
 
-In `MySimpleNode` constructor
+In `simple_node.cpp`:
 
 ```cpp
   /* Add inside the constructor or to a init_interfaces() method.*/
