@@ -80,3 +80,28 @@ ros2 run my_package my_node
 ```
 
 OBS: note that `my_node` is the executable name you defined in the `add_executable` part of the `CMakeLists.txt`.
+
+
+## Useful Plugins
+
+### RQT (Ros-Qt)
+
+Useful for visualisation of ROS2 data.
+
+```bash
+rqt
+```
+
+### PlotJuggler
+
+Also useful for visualisation of ROS2 data. Good for XY graphs.
+
+```bash
+sudo apt install ros-kilted-plotjuggler-ros
+```
+
+Run:
+```bash
+ros2 run plotjuggler plotjuggler
+```
+
