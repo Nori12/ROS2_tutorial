@@ -148,3 +148,25 @@ Verify the creation of the topic by opening another terminal and running:
 ```bash
 ros2 topic echo /robot_position
 ```
+
+
+## Add a subscriber
+
+In `MySimpleNode` constructor
+
+```cpp
+  /* Add inside the constructor or to a init_interfaces() method.*/
+  subscription_ = this->create_subscription<geometry_msgs::msg::Twist>(
+                  "cmd_vel", 10,
+                  std::bind(&MySimpleNode::twist_callback, this, std::placeholders::_1);
+
+  /* Add as a member variable of the node class. */
+  rclcpp::Subscription<geometry_msgs::msg::Twist>::SharedPtr subscription_;
+
+  /* Add as a method of the node class.*/
+  void MySimpleNode::twist_callback(const geometry_msgs::msg::Twist::SharedPtr msg) {
+      RCLCPP_INFO(this->get_logger(), "Received rotation command: %.2f", msg->angular.z);
+      u1_ = msg->angular.z;
+  }
+```
+
